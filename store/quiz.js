@@ -146,7 +146,7 @@ export const mutations = {
       quiz.question = "これはどのお店？"
 
       const hasPhotos = lines.filter(line => line.img1)
-      const ansIndex = Math.floor(Math.random() * hasPhotos.length) - 1
+      const ansIndex = Math.floor(Math.random() * hasPhotos.length)
       quiz.photo = hasPhotos[ansIndex].img1
       quiz.answer = hasPhotos[ansIndex].name
       quiz.description = hasPhotos[ansIndex].contents & '\n' & hasPhotos[ansIndex].address & '\n' & '営業時間：' & hasPhotos[ansIndex].business_hours & '\n' & '定休日：' &  hasPhotos[ansIndex].regular_holiday
@@ -191,21 +191,21 @@ function getRandomArray(array, num)
 
   for (let i = 0; i < num; i++)
   {
-    rndArray.push(array[ Math.floor( Math.random() * array.length ) ])
+    rndArray.push(array[Math.floor(Math.random() * array.length)])
   }
 
   return rndArray
 }
 
 // 配列ランダムに並び変える
-// ref:https://www.nxworld.net/js-array-shuffle.html
+// ref:https://stackoverflow.com/a/12646864
 // 【引数】
 //   array : 最小値
 // 【戻り値】
 //   並び替えた配列
 function getShuffledArray(array)
 {
-  for (let i = array.length - 1; i >= 0; i--) {
+  for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
   }
