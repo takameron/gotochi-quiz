@@ -49,11 +49,24 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      lang: 'en'
+      lang: 'ja',
+      name: 'ご当地クイズ',
+      short_name: 'ご当地クイズ',
+      description: 'オープンデータを活用した、地域にまつわるクイズです。',
     }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extend(config) {
+      config.module.rules.push({
+        test: /\.csv$/,
+        loader: 'csv-loader',
+        options: {
+          dynamicTyping: true,
+          skipEmptyLines: true
+        }
+      })
+    }
   }
 }
