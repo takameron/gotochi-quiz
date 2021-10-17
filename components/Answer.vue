@@ -1,10 +1,18 @@
 <template>
-  <section>
-    <h1>答え</h1>
-    <div class="answer-iscorrect">{{ correct | convResultText }}</div>
-    {{ answer }}<br>
-    <button @click="moveNext()">次へ</button>
-  </section>
+  <v-container>
+    <v-row class="pa-4">
+      <v-col cols="12" class="text-center">
+        <v-chip large color="orange" text-color="white" class="text-h5">答え</v-chip>
+      </v-col>
+      <v-col
+        cols="12"
+        class="text-center text-h5"
+        :class="correct ? 'red--text' : 'blue--text'"
+      >{{ correct | convResultText }}</v-col>
+      <v-col cols="12" class="text-center text-h5">{{ answer }}</v-col>
+      <v-btn depressed color="error" width="100%" @click="moveNext()">次へ</v-btn>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -60,13 +68,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-/* <template></template>内のid属性やclass属性をつけたものに対して、CSSでスタイルを当てる */
-
-  /* ↓例↓ */
-  .answer-iscorrect {
-    color: red;
-  }
-</style>
