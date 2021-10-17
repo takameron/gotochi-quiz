@@ -3,6 +3,7 @@
     <h1>答え</h1>
     <div class="answer-iscorrect">{{ correct | convResultText }}</div>
     {{ answer }}<br>
+    <div style="white-space: pre-wrap;" v-text="description" /><br>
     <button @click="moveNext()">次へ</button>
   </section>
 </template>
@@ -39,6 +40,19 @@ export default {
         return '回答の取得に失敗'
       }
       return answer.correct
+    },
+    description() {
+      const ids = this.$store.getters['status/ids']
+      const list = this.$store.getters['quiz/list'].slice()
+      const quizset = list.find(quizset => quizset.id === ids.quizsetId)
+      if (typeof quizset === 'undefined') {
+        return '問題セットの取得に失敗'
+      }
+      const quiz = quizset.quizzes.find(quiz => quiz.id === ids.quizId)
+      if (typeof quiz === 'undefined') {
+        return 'クイズの取得に失敗'
+      }
+      return quiz.description
     }
   },
   methods: {
