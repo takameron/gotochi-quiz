@@ -76,7 +76,7 @@ export const mutations = {
       const ansIndex = Math.floor(Math.random() * hasPhotos.length) - 1
       quiz.photo = hasPhotos[ansIndex].img1
       quiz.answer = hasPhotos[ansIndex].hyakkei
-      quiz.description = hasPhotos[ansIndex].point & '\n' & hasPhotos[ansIndex].description
+      quiz.description = hasPhotos[ansIndex].point + '\n' + hasPhotos[ansIndex].description
 
       const hyakkeies = [] // 百景だけを抽出
       lines.forEach((val) => {
@@ -149,7 +149,7 @@ export const mutations = {
       const ansIndex = Math.floor(Math.random() * hasPhotos.length)
       quiz.photo = hasPhotos[ansIndex].img1
       quiz.answer = hasPhotos[ansIndex].name
-      quiz.description = hasPhotos[ansIndex].contents & '\n' & hasPhotos[ansIndex].address & '\n' & '営業時間：' & hasPhotos[ansIndex].business_hours & '\n' & '定休日：' &  hasPhotos[ansIndex].regular_holiday
+      quiz.description = hasPhotos[ansIndex].contents + '\n' + hasPhotos[ansIndex].address + '\n' + '営業時間：' + hasPhotos[ansIndex].business_hours + '\n' + '定休日：' +  hasPhotos[ansIndex].regular_holiday
 
       const names = [] // 店舗名だけを抽出
       lines.forEach((val) => {
