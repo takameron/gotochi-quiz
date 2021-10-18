@@ -20,7 +20,6 @@
           depressed
           color="error"
           width="100%"
-          style="white-space: normal;"
           @click="moveAnswer(ids.quizsetId, ids.quizId, choice, getQuiz(ids.quizsetId, ids.quizId).answer)"
         >{{ choice }}</v-btn>
       </v-col>
@@ -58,8 +57,8 @@ export default {
 </script>
 
 <style scoped>
-  .v-btn__content {
-    white-space: normal;
-    width: 100%;
-  }
+.v-btn >>> .v-btn__content {
+  white-space: normal;
+  width: 100%;
+}
 </style>
