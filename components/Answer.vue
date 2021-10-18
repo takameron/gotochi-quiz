@@ -10,7 +10,7 @@
         :class="correct ? 'red--text' : 'blue--text'"
       >{{ correct | convResultText }}</v-col>
       <v-col cols="12" class="text-center text-h5">{{ answer }}</v-col>
-      <v-col cols="12" style="white-space: pre-wrap;" v-text="description" /></v-col>
+      <v-col cols="12" style="white-space: pre-wrap;" v-text="description"></v-col>
       <v-btn depressed color="error" width="100%" @click="moveNext()">次へ</v-btn>
     </v-row>
   </v-container>
