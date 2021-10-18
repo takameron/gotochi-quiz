@@ -1,3 +1,5 @@
 <template>
-  <Question/>
+  <Layout>
+    <Question />
+  </Layout>
 </template>
