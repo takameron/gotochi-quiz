@@ -15,6 +15,7 @@ export default {
   },
   methods: {
     moveQuestion(id) {
+      this.$store.dispatch('status/init')
       this.$store.dispatch('status/update', {quizsetId:id, quizId:1})
       this.$router.push('/question')
     }
