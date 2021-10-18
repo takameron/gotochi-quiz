@@ -1,12 +1,25 @@
 <template>
-  <section>
-    <div v-for="quizset in list" :key="quizset.id">
-      <button @click="moveQuestion(quizset.id)">{{ quizset.title }}</button>
-    </div>
-    <div class="copyright">
-      このアプリは以下の著作物を改変して利用しています。 福井県オープンデータライブラリ、福井県、<a href="https://creativecommons.org/licenses/by/2.1/jp/">クリエイティブ・コモンズ・ライセンス 表示 2.1</a>
-    </div>
-  </section>
+  <v-container>
+    <v-row class="pa-4">
+      <v-col
+        v-for="quizset in list"
+        :key="quizset.id"
+        class="border"
+        xs="12"
+        sm="12"
+        cols="12"
+      >
+        <v-btn
+          width="100%"
+          @click="moveQuestion(quizset.id)"
+        >{{ quizset.title }}</v-btn>
+      </v-col>
+
+      <v-footer class="copyright">
+        このアプリは以下の著作物を改変して利用しています。 <a href="https://www.pref.fukui.lg.jp/doc/toukei-jouhou/opendata/category.html">福井県オープンデータライブラリ</a>、福井県、<a href="https://creativecommons.org/licenses/by/2.1/jp/">クリエイティブ・コモンズ・ライセンス 表示 2.1</a>
+      </v-footer>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
