@@ -1,5 +1,5 @@
 <template>
-  <v-app class="bg_dot">
+  <v-app>
     <v-container>
       <v-row dense>
         <v-col cols="12" class="text-center">
@@ -22,7 +22,7 @@
 </template>
 
 <style scoped>
-.bg_dot {
+.theme--light.v-application {
   background-color: #80deea;
   background-image: radial-gradient(#4dd0e1 10%, transparent 20%),
     radial-gradient(#4dd0e1 10%, transparent 20%);
