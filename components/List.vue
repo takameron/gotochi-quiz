@@ -12,7 +12,7 @@
         <v-btn
           width="100%"
           @click="moveQuestion(quizset.id)"
-        >{{ quizset.title }}</v-btn>
+        >{{ quizset.title }}（{{ getQuizNum(quizset.id) }}問）</v-btn>
       </v-col>
 
       <v-footer class="copyright">
@@ -30,6 +30,14 @@ export default {
     }
   },
   methods: {
+    getQuizNum(quizsetId) {
+      const list = this.$store.getters['quiz/list'].slice()
+      const quizset = list.find(quizset => quizset.id === quizsetId)
+      if (typeof quizset === 'undefined') {
+        return '問題セットの取得に失敗'
+      }
+      return quizset.quizzes.length
+    },
     moveQuestion(id) {
       this.$store.dispatch('status/update', {quizsetId:id, quizId:1})
       this.$router.push('/question')
