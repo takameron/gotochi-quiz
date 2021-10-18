@@ -58,8 +58,8 @@ export default {
 </script>
 
 <style scoped>
-  .v-btn__content {
-    white-space: normal;
-    width: 100%;
-  }
+.v-btn >>> .v-btn__content {
+  white-space: normal;
+  width: 100%;
+}
 </style>
