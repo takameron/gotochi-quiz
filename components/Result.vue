@@ -1,9 +1,13 @@
 <template>
-  <section>
-    <h1>結果</h1>
-    {{ quiz_num }}問中{{ correct_num }}問正解！<br>
-    <button @click="moveTop()">問題一覧に戻る</button>
-  </section>
+  <v-container>
+    <v-row class="pa-4">
+      <v-col cols="12" class="text-center">
+        <v-chip large color="orange" text-color="white" class="text-h5">結果</v-chip>
+      </v-col>
+      <v-col cols="12" class="text-center text-h5">{{ quiz_num }}問中{{ correct_num }}問正解！</v-col>
+      <v-btn depressed color="error" width="100%" @click="moveTop()">問題一覧に戻る</v-btn>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
