@@ -2,7 +2,7 @@
   <v-container>
     <v-row class="pa-4">
       <v-col cols="12" class="text-center">
-        <v-chip large color="orange" text-color="white" class="text-h5">問題</v-chip>
+        <v-chip large color="orange" text-color="white" class="text-h5">第{{ ids.quizId }}問</v-chip>
       </v-col>
       <v-col cols="12" class="text-center">
         <v-img :src="getQuiz(ids.quizsetId, ids.quizId).photo" class="rounded"></v-img>
