@@ -147,7 +147,7 @@ export const mutations = {
 
       const hasPhotos = lines.filter(line => line.img1)
       const ansIndex = Math.floor(Math.random() * hasPhotos.length)
-      quiz.photo = hasPhotos[ansIndex].img1
+      quiz.photo = hasPhotos[ansIndex].img1.replace('http://info.pref.fukui.jp/opendata/', 'https://raw.githubusercontent.com/takameron/gotochi-quiz/main/data/') // GitHub側で保持しているものに切り替える
       quiz.answer = hasPhotos[ansIndex].name
       quiz.description = hasPhotos[ansIndex].contents + '\n' + hasPhotos[ansIndex].address + '\n' + '営業時間：' + hasPhotos[ansIndex].business_hours + '\n' + '定休日：' +  hasPhotos[ansIndex].regular_holiday
 
